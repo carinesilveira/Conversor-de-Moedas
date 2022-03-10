@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: linear-gradient(45deg, #8e2de2, #ffe4c4);
+  background-repeat: no-repeat;
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+main.container {
+  background: white;
+  max-width: 300px;
+  min-height: 60vh;
+  padding: 1rem;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+main h2 {
+  font-weight: 600;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative; /*Pra linha em baixo*/
+}
+main h2::before {
+  content: "";
+  position: absolute;
+  height: 6px;
+  width: 35px;
+  botton: 3px;
+  left: 0;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #8e2de2, #ffe4c4);
+}
+main h3 {
+  font-weight: 350;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.input-field {
+  position: relative;
+}
+
+.input-field .underline::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100px;
+  bottom: -5px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.input-field .underline::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(45deg, #8e2de2, #ffe4c4);
+  transform: scaleX(0); /*Nao estará visível a cor*/
+  transition: all 0.3s ease-in-out;
+  transform-origin: left;
+}
+.input-field input:focus ~ .underline::after {
+  transform: scaleX(1);
+}
+
+.input-field input {
+  outline: none;
+}
+
+form input[type="submit"] {
+  margin-top: 2rem;
+  background: linear-gradient(to left, #8e2de2, #ffe4c4);
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #4f4f4f;
+  border-radius: 4px;
+  transition: all 0.3 ease;
+  padding: 0.4rem;
+}
+form input[type="submit"]:hover {
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, #8e2de2, #ffe4c4);
+}
